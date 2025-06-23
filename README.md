@@ -401,7 +401,44 @@ Jogo 01: 07 - 14 - 23 - 35 - 42
 
 ## 📝 Licença
 
-Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+Este projeto está licenciado sob a **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License** - veja o arquivo [LICENSE](LICENSE) para detalhes completos.
+
+### Resumo da Licença CC BY-NC-SA 4.0
+
+✅ **Permitido (Uso Não-Comercial):**
+- ✅ Uso pessoal e educacional
+- ✅ Modificação e adaptação
+- ✅ Distribuição e compartilhamento
+- ✅ Uso em projetos open source
+
+📋 **Condições Obrigatórias:**
+- 📝 **Atribuição** - Deve creditar o autor original
+- 🔗 **Link da licença** - Deve incluir link para a licença
+- 📋 **Indicar mudanças** - Se modificou, deve indicar
+- 🔄 **ShareAlike** - Modificações devem usar a mesma licença
+
+❌ **Proibido:**
+- 💼 **Uso comercial** sem autorização expressa
+- 🏢 **Uso empresarial** para fins lucrativos
+- 💰 **Venda ou monetização** sem permissão
+
+### 💼 Uso Comercial
+
+Para uso comercial deste software, incluindo:
+- Integração em produtos comerciais
+- Uso em ambientes empresariais
+- Distribuição como parte de software comercial
+- Uso por empresas para fins lucrativos
+
+**É necessário obter autorização expressa por escrito.**
+
+📧 **Contato para licenciamento comercial:** arthurbfx2001@gmail.com
+
+### Copyright
+
+© 2024 Arthur Batista Furlan. Todos os direitos reservados sob a Licença CC BY-NC-SA 4.0.
+
+🔗 **Licença completa:** https://creativecommons.org/licenses/by-nc-sa/4.0/
 
 ## 🍀 Flexibilidade Total
 

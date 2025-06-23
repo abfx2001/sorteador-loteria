@@ -1,5 +1,9 @@
 {
   "name": "sorteador",
+  "version": "1.0.0",
+  "description": "Gerador flexível de números para sorteios e loterias",
+  "author": "Arthur Batista Furlan <arthurbfx2001@gmail.com>",
+  "license": "CC-BY-NC-SA-4.0",
   "private": true,
   "type": "module",
   "scripts": {

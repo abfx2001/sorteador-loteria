@@ -1,3 +1,13 @@
+/*
+ * Gerador de Números para Sorteios
+ * Copyright (c) 2024 Arthur Batista Furlan
+ * 
+ * Licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
+ * https://creativecommons.org/licenses/by-nc-sa/4.0/
+ * 
+ * For commercial use, contact: arthurbfx2001@gmail.com
+ */
+
 import type { Route } from "./+types/home";
 import { useState } from "react";
 
@@ -231,6 +241,7 @@ export default function Home() {
   const [fixedNumbersStr, setFixedNumbersStr] = useState<string[]>([]);
   const [generatedGames, setGeneratedGames] = useState<number[][]>([]);
   const [copySuccess, setCopySuccess] = useState<boolean>(false);
+  const [showSupportModal, setShowSupportModal] = useState(false);
 
   // Validações
   const isMinNumberValid = isValidInteger(minNumberStr);
@@ -752,6 +763,102 @@ export default function Home() {
           </p>
         </footer>
       </div>
+
+      {/* Botão Flutuante de Apoio */}
+      <button
+        onClick={() => setShowSupportModal(true)}
+        className="fixed bottom-6 right-6 bg-gradient-to-r from-pink-500 to-purple-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 z-50 group"
+        title="Apoiar o criador ❤️"
+      >
+        <div className="flex items-center justify-center">
+          <span className="text-2xl">☕</span>
+        </div>
+        <div className="absolute bottom-full right-0 mb-2 px-3 py-1 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+          Apoiar o criador ❤️
+        </div>
+      </button>
+
+      {/* Modal de Apoio */}
+      {showSupportModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-lg max-w-md w-full max-h-[90vh] overflow-y-auto">
+            <div className="p-6">
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-xl font-bold text-gray-800">
+                  ❤️ Apoiar o Criador
+                </h3>
+                <button
+                  onClick={() => setShowSupportModal(false)}
+                  className="text-gray-500 hover:text-gray-700 text-2xl font-bold"
+                >
+                  ×
+                </button>
+              </div>
+              
+              <div className="text-center space-y-4">
+                <div className="text-gray-600">
+                  <p className="mb-3">
+                    ☕ Gostou do gerador de números? 
+                  </p>
+                  <p className="mb-4 text-sm">
+                    Se este aplicativo te ajudou, considere fazer uma contribuição via PIX para apoiar o desenvolvimento e manter o projeto funcionando! 
+                  </p>
+                </div>
+
+                {/* Container do QR Code */}
+                <div className="bg-gray-50 p-4 rounded-lg border-2 border-dashed border-gray-300">
+                  <div className="w-48 h-48 mx-auto bg-white border border-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
+                    <img
+                      src="/qrcode-pix.png"
+                      alt="QR Code PIX para apoiar o criador"
+                      className="w-full h-full object-contain"
+                      onError={(e) => {
+                        // Fallback caso a imagem não carregue
+                        const target = e.target as HTMLElement;
+                        target.style.display = 'none';
+                        target.nextElementSibling?.classList.remove('hidden');
+                      }}
+                    />
+                    <div className="text-center text-gray-500 hidden">
+                      <div className="text-6xl mb-2">📱</div>
+                      <p className="text-sm">QR Code PIX</p>
+                      <p className="text-xs mt-1">Adicione sua imagem QR Code em /public/qrcode-pix.png</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Informações PIX */}
+                <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                  <h4 className="font-semibold text-blue-800 mb-2">💳 Informações PIX</h4>
+                  <div className="text-sm text-blue-700 space-y-1">
+                    <p><strong>Chave PIX:</strong></p>
+                    <p className="bg-white p-2 rounded border font-mono text-xs break-all">
+                    00020126450014BR.GOV.BCB.PIX0123arthurbfx2001@gmail.com5204000053039865802BR5921ARTHUR BATISTA FURLAN6009SAO PAULO622605222QgWkZY5TF2KB9U01osal4630483D6
+                    </p>
+                    <p className="text-xs mt-2">
+                      Ou escaneie o QR Code acima com seu app bancário
+                    </p>
+                  </div>
+                </div>
+
+                <div className="text-xs text-gray-500 pt-2 border-t">
+                  <p>
+                    🙏 Qualquer valor é muito bem-vindo e ajuda a manter o projeto ativo. 
+                    Obrigado pelo seu apoio!
+                  </p>
+                </div>
+
+                <button
+                  onClick={() => setShowSupportModal(false)}
+                  className="w-full bg-gradient-to-r from-pink-500 to-purple-600 text-white py-2 px-4 rounded-lg hover:from-pink-600 hover:to-purple-700 transition-all duration-200"
+                >
+                  Fechar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
